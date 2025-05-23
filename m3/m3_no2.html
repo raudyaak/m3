@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validasi Login</title>
+    <script>
+        function cekLogin() {
+            let nama = document.getElementById('namaInput').value;
+            let email = document.getElementById('emailInput').value;
+            let pass = document.getElementById('passwordInput').value;
+            
+            if (!nama || !email || !pass) {
+                alert('Semua kolom harus diisi!');
+                return;
+            }
+            
+            if (pass !== 'Selesai') {
+                alert('Error, Password salah!');
+            } else {
+                alert(`Selamat datang, ${nama}! Login berhasil.`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Validasi Input</h2>
+    <p>Masukkan nama, password, dan alamat email anda:</p>
+    <label for="namaInput">Nama:</label>
+    <input type="text" id="namaInput" placeholder="Masukkan nama"><br><br>
+    
+    <label for="passwordInput">Password:</label>
+    <input type="password" id="passwordInput" placeholder="Masukkan password"><br><br>
+    
+    <label for="emailInput">Email:</label>
+    <input type="email" id="emailInput" placeholder="Masukkan email"><br><br>
+    
+    <button onclick="cekLogin()">Klik</button>
+</body>
+</html>

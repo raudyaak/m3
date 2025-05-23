@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilangan Prima</title>
+    <script>
+        function cariPrima() {
+            let num = parseInt(document.getElementById('primaInput').value);
+            let primes = [];
+            
+            if (num < 2) {
+                document.getElementById('primaResult').innerText = 'Masukkan angka >= 2';
+                return;
+            }
+            
+            for (let i = 2; i <= num; i++) {
+                let isPrime = true;
+                for (let j = 2; j * j <= i; j++) {
+                    if (i % j === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime) primes.push(i);
+            }
+            
+            document.getElementById('primaResult').innerText = `Bilangan Prima dari 1 hingga " + number + " adalah: ": ${primes.join(', ')}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Cari Bilangan Prima</h2>
+    <label for="primaInput">Masukkan angka:</label>
+    <input type="number" id="primaInput" placeholder="Masukkan angka"><br><br>
+    
+    <button onclick="cariPrima()">Cari</button>
+    <p id="primaResult"></p>
+</body>
+</html>

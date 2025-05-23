@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fungsi Faktorial</title>
+    <script>
+        function hitungFaktorial() {
+            let num = parseInt(document.getElementById('factorialInput').value);
+            if (num < 0) {
+                document.getElementById('factorialResult').innerText = "Masukkan angka positif!";
+                return;
+            }
+            let result = 1;
+            for (let i = 1; i <= num; i++) {
+                result *= i;
+            }
+            document.getElementById('factorialResult').innerText = `angka faktorial dari ${num} adalah : ${result}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Hitung faktorial dari input</h2>
+    <h2>Masukkan sembarang angka</h2>
+    <input type="number" id="factorialInput" placeholder="Masukkan angka">
+    <button onclick="hitungFaktorial()">click</button>
+    <p id="factorialResult"></p>
+</body>
+</html>
